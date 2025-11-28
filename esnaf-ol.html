@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esnaf Ol Başvurusu | Esnaf Merkezi</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body class="bg-light">
+
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="card shadow">
+                    <div class="card-body p-5">
+                        <h2 class="text-center mb-4">Esnaf Başvuru Formu</h2>
+                        <p class="text-center text-muted mb-4">İşletmenizi dijital dünyaya taşıyın.</p>
+                        
+                        <form id="esnafBasvuruForm">
+                            <div class="mb-3">
+                                <label class="form-label">İşletme Adı</label>
+                                <input type="text" id="dukkanAd" class="form-control" required placeholder="Örn: Lezzet Durağı">
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Kategori</label>
+                                    <select id="kategori" class="form-select" required>
+                                        <option value="">Seçiniz...</option>
+                                        <option value="Restoran">Restoran</option>
+                                        <option value="Berber">Berber / Kuaför</option>
+                                        <option value="Market">Market / Manav</option>
+                                        <option value="Giyim">Giyim / Terzi</option>
+                                        <option value="Kafe">Kafe</option>
+                                        <option value="Diğer">Diğer</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Telefon</label>
+                                    <input type="tel" id="telefon" class="form-control" placeholder="0555 123 45 67" required>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">İşletme Açıklaması</label>
+                                <textarea id="aciklama" class="form-control" rows="3" placeholder="Müşterilerinize kendinizi tanıtın..."></textarea>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">Adres</label>
+                                <textarea id="adres" class="form-control" rows="2" required></textarea>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="form-label">Dükkan Fotoğrafı</label>
+                                <input type="file" id="resimDosyasi" class="form-control" accept="image/*" required>
+                                <div class="form-text">Lütfen net ve yatay bir fotoğraf yükleyin.</div>
+                            </div>
+
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary btn-lg" id="submitBtn">
+                                    Başvuruyu Tamamla
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="assets/js/modules/esnafBasvuru.js"></script>
+</body>
+</html>
